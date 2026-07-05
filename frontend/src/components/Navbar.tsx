@@ -11,49 +11,63 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-blue-600 text-white shadow-lg">
+    <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-            <span className="text-white">⚡</span>
-            <span>NexusAI</span>
+          <Link to="/" className="flex items-center gap-2">
+            <span className="text-2xl">🚀</span>
+            <span className="text-xl font-bold text-blue-600">NexusAI</span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="hover:text-blue-200 transition">Home</Link>
-            <Link to="/products" className="hover:text-blue-200 transition">Products</Link>
-            <Link to="/cart" className="hover:text-blue-200 transition flex items-center gap-1">🛒 Cart</Link>
-          </div>
+          <div className="hidden md:flex gap-8 items-center">
+            <Link to="/" className="text-gray-700 hover:text-blue-600 transition">Home</Link>
+            <Link to="/products" className="text-gray-700 hover:text-blue-600 transition">Products</Link>
+            <Link to="/cart" className="text-gray-700 hover:text-blue-600 transition">🛒 Cart</Link>
 
-          <div className="hidden md:flex items-center gap-4">
             {token ? (
-              <button onClick={handleLogout} className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded transition">
-                Logout
-              </button>
+              <div className="flex gap-4 items-center">
+                <Link to="/profile" className="text-gray-700 hover:text-blue-600 transition">👤 Profile</Link>
+                <button
+                  onClick={handleLogout}
+                  className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"
+                >
+                  Logout
+                </button>
+              </div>
             ) : (
-              <>
-                <Link to="/login" className="hover:text-blue-200 transition">Login</Link>
-                <Link to="/register" className="bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-50 transition">
+              <div className="flex gap-4">
+                <Link to="/login" className="text-blue-600 border-2 border-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition">
+                  Login
+                </Link>
+                <Link to="/register" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
                   Register
                 </Link>
-              </>
+              </div>
             )}
           </div>
 
-          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>☰</button>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-gray-700"
+          >
+            ☰
+          </button>
         </div>
 
         {isOpen && (
           <div className="md:hidden pb-4 space-y-2">
-            <Link to="/" className="block px-4 py-2 hover:bg-blue-500 rounded">Home</Link>
-            <Link to="/products" className="block px-4 py-2 hover:bg-blue-500 rounded">Products</Link>
-            <Link to="/cart" className="block px-4 py-2 hover:bg-blue-500 rounded">Cart</Link>
+            <Link to="/" className="block text-gray-700 hover:text-blue-600 py-2">Home</Link>
+            <Link to="/products" className="block text-gray-700 hover:text-blue-600 py-2">Products</Link>
+            <Link to="/cart" className="block text-gray-700 hover:text-blue-600 py-2">Cart</Link>
             {token ? (
-              <button onClick={handleLogout} className="w-full text-left px-4 py-2 bg-red-500 rounded hover:bg-red-600">Logout</button>
+              <>
+                <Link to="/profile" className="block text-gray-700 hover:text-blue-600 py-2">Profile</Link>
+                <button onClick={handleLogout} className="w-full text-left text-red-600 py-2">Logout</button>
+              </>
             ) : (
               <>
-                <Link to="/login" className="block px-4 py-2 hover:bg-blue-500 rounded">Login</Link>
-                <Link to="/register" className="block px-4 py-2 hover:bg-blue-500 rounded">Register</Link>
+                <Link to="/login" className="block text-blue-600 py-2">Login</Link>
+                <Link to="/register" className="block text-blue-600 py-2">Register</Link>
               </>
             )}
           </div>
