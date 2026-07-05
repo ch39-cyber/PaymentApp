@@ -1,0 +1,1 @@
+{"name":"nexusai-commerce-cloud","version":"1.0.0","description":"AI-Powered Multi-Cloud Smart Commerce Platform","private":true,"workspaces":["frontend","backend"],"scripts":{"dev":"npm run dev --workspaces","build":"npm run build --workspaces","start":"npm start --workspaces","test":"npm test --workspaces","lint":"npm run lint --workspaces"}}
