@@ -2,7 +2,7 @@
   "name": "nexusai-backend",
   "version": "1.0.0",
   "description": "NexusAI Commerce Cloud - Backend API",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon --exec ts-node src/index.ts",
     "build": "tsc",
@@ -10,6 +10,15 @@
     "lint": "eslint src --ext .ts",
     "format": "prettier --write src"
   },
+  "keywords": [
+    "e-commerce",
+    "api",
+    "typescript",
+    "express",
+    "mongodb"
+  ],
+  "author": "Chandan Kumar Yadav",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
     "mongoose": "^7.2.0",
