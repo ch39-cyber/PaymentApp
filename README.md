@@ -1,39 +1,133 @@
 # NexusAI Commerce Cloud
 
-**AI-Powered Multi-Cloud Smart Commerce Platform**
+**AI-Powered E-Commerce Platform - Phase 1 Foundation**
 
-A production-grade e-commerce platform demonstrating full-stack development, microservices, AI integration, DevOps, and cloud deployment.
+Welcome to NexusAI, the next generation of AI-driven e-commerce solutions. This repository contains the foundational code for a full-stack payment and commerce platform.
 
-## Overview
+## 📋 Project Structure
 
-This is the flagship project built in phases over 6-8 months. Each phase adds new features and capabilities.
+```
+PaymentApp/
+├── frontend/          # React + TypeScript frontend
+│   ├── src/
+│   │   ├── components/   # Reusable components
+│   │   ├── pages/        # Page components
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── package.json
+│   └── vite.config.ts
+├── backend/           # Node.js + Express backend
+│   ├── src/
+│   │   ├── config/      # Configuration
+│   │   ├── controllers/ # Route handlers
+│   │   ├── middleware/  # Custom middleware
+│   │   ├── models/      # Database schemas
+│   │   ├── routes/      # API routes
+│   │   ├── utils/       # Utility functions
+│   │   └── index.ts
+│   ├── package.json
+│   └── tsconfig.json
+└── README.md
+```
 
-## Quick Start
+## 🚀 Features (Phase 1)
 
+- **User Authentication**: Register, Login with JWT
+- **Product Management**: Create, Read products
+- **Shopping Cart**: Add/Remove items, manage quantities
+- **Order System**: Create orders, track order status
+- **User Profiles**: View and update user information
+- **Role-Based Access**: Customer, Seller, Admin roles
+
+## 🛠 Tech Stack
+
+### Frontend
+- React 18 + TypeScript
+- Vite for fast builds
+- React Router for navigation
+- Tailwind CSS for styling
+- Axios for API calls
+
+### Backend
+- Node.js + Express
+- MongoDB for database
+- TypeScript for type safety
+- JWT for authentication
+- bcrypt for password hashing
+
+## 📦 Installation
+
+### Backend Setup
 ```bash
+cd backend
+npm install
+cp .env.example .env
+# Edit .env with your configuration
+npm run dev
+```
+
+### Frontend Setup
+```bash
+cd frontend
 npm install
 npm run dev
 ```
 
-Frontend: http://localhost:3000
-Backend: http://localhost:5000
+## 🔌 API Endpoints
 
-## Tech Stack
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - Login user
 
-- **Frontend**: React 18 + TypeScript + Tailwind CSS
-- **Backend**: Node.js + Express + MongoDB
-- **DevOps**: Docker + Kubernetes + GitHub Actions
-- **AI**: Python + TensorFlow (later phases)
+### Products
+- `GET /api/products` - Get all products
+- `GET /api/products/:id` - Get product by ID
+- `POST /api/products` - Create product (seller only)
 
-## Phases
+### Orders
+- `POST /api/orders` - Create order
+- `GET /api/orders` - Get user orders
+- `GET /api/orders/:id` - Get order by ID
 
-1. **Phase 1 (Weeks 1-3)**: Foundation - Auth, Products, Cart
-2. **Phase 2 (Weeks 4-6)**: Marketplace - Sellers, Dashboard
-3. **Phase 3 (Week 7)**: Payments - Stripe Integration
-4. **Phase 4 (Weeks 8-10)**: AI Features
-5. **Phase 5 (Weeks 11-13)**: DevOps & Deployment
-6. **Phase 6+ (Weeks 14+)**: Advanced Features
+### Users
+- `GET /api/users/profile` - Get user profile
+- `PUT /api/users/profile` - Update user profile
 
-## Documentation
+## 📝 Environment Variables
 
-See `docs/PHASE1.md` for detailed Phase 1 documentation.
+### Backend (.env)
+```
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/nexusai
+JWT_SECRET=your-secret-key
+NODE_ENV=development
+```
+
+### Frontend (.env)
+```
+VITE_API_URL=http://localhost:5000/api
+```
+
+## 🎯 Next Steps (Phase 2)
+
+- Payment Integration (Stripe/PayPal)
+- AI-Powered Recommendations
+- Advanced Search & Filtering
+- Admin Dashboard
+- Real-time Notifications
+- Email Integration
+- Deployment Setup
+
+## 📄 License
+
+MIT License - See LICENSE file for details
+
+## 👥 Contributors
+
+- Chandan Kumar Yadav (@ch39-cyber)
+
+---
+
+**Status**: Phase 1 - Foundation Complete ✅
+
+**Last Updated**: July 5, 2026
